@@ -1,3 +1,9 @@
+import sys
+import os
+
+# Add the parent directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import streamlit as st
 from src.recommendation_engine import recommend_restaurants
 
