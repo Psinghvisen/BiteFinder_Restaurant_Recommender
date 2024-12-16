@@ -1,112 +1,102 @@
 import sys
 import os
+import streamlit as st
+import pandas as pd
+from dotenv import load_dotenv
 
 # Add the parent directory of the current file to the Python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
-import streamlit as st
-import pandas as pd
-import plotly.express as px
 from src.recommendation_engine import top_five_restaurants
-from src.api_integration import fetch_geocode, calculate_distance
+
+# Load environment variables (Google Maps API Key)
+load_dotenv("../.env")
+GOOGLE_MAPS_API_KEY = os.environ.get("GOOGLE_MAPS_API_KEY")
+
+if GOOGLE_MAPS_API_KEY is None:
+    print("Error: GOOGLE_MAPS_API_KEY not found.")
+else:
+    print("GOOGLE_MAPS_API_KEY loaded successfully.")
 
 
-# Add heatmap function
-def create_heatmap(data):
+# Function to create Google Static Maps URL
+def generate_google_maps_url(lat, lon):
     """
-    Create a heatmap using Plotly Express for restaurant ratings.
-
-    Args:
-        data (pd.DataFrame): DataFrame with latitude, longitude, and rating.
-    Returns:
-        Plotly figure object
+    Generate a Google Maps Static API URL for a given latitude and longitude.
     """
-    fig = px.density_mapbox(
-        data,
-        lat="latitude",
-        lon="longitude",
-        z="rating",
-        radius=10,
-        center=dict(lat=37.7749, lon=-122.4194),
-        zoom=10,
-        mapbox_style="stamen-terrain",
-        title="Restaurant Heatmap Based on Ratings",
-    )
-    return fig
+    return f"https://maps.googleapis.com/maps/api/staticmap?center={lat},{lon}&zoom=15&size=600x400&markers=color:red%7C{lat},{lon}&key={GOOGLE_MAPS_API_KEY}"
+
+
+# Function to create a Google Maps Navigation URL
+def generate_google_maps_navigation_url(lat, lon):
+    """
+    Generate a Google Maps URL for navigation to a location from the user's current location.
+    """
+    return f"https://www.google.com/maps/dir/?api=1&destination={lat},{lon}&travelmode=driving"
 
 
 # Title of the app
-st.markdown(
-    """
-    <h1 style='text-align: center; color: #FF5733; font-family: Arial;'>
-        🍽️ BiteFinder: A Personalized Dining Guide 🍽️
-    </h1>
-    """,
-    unsafe_allow_html=True,
-)
+st.title("🍽️ BiteFinder: A Personalized Dining Guide 🍽️")
 
-# Sidebar for inputs
-st.sidebar.image("https://cdn-icons-png.flaticon.com/512/2649/2649082.png", width=200)
+# Sidebar for user inputs
 st.sidebar.header("Filter Your Search 🔍")
 user_location = st.sidebar.text_input("📍 Enter Your Location")
 cuisine = st.sidebar.text_input("🍴 Enter Cuisine Type")
 rating = st.sidebar.slider("⭐ Select Minimum Rating", 1.0, 5.0, 4.0)
 
-# Heatmap option
-show_heatmap = st.sidebar.checkbox("Show Heatmap of Restaurants")
-
 # Action Button
 if st.sidebar.button("Find Restaurants"):
     try:
-        # Load the dataset
+        # Load the cleaned dataset
         data = pd.read_csv("../data/final_combined_cleaned_data.csv")
 
         # Apply filtering
         filtered_data = data[
-            (data["address"].str.contains(user_location, case=False, na=False))
+            (data["city"].str.contains(user_location, case=False, na=False))
             & (data["cuisine_type"].str.contains(cuisine, case=False, na=False))
             & (data["rating"] >= rating)
         ]
 
-        # Top 5 results if filters are empty
-        if user_location == "" and cuisine == "":
-            st.subheader("🍽️ Top 5 Restaurants Based on Ratings")
-            recommendations = top_five_restaurants()
+        # If no results are found
+        if filtered_data.empty:
+            st.warning("No matching restaurants found. Try changing your filters.")
         else:
-            st.subheader("🍽️ Top 5 Restaurants Matching Your Filters")
-            recommendations = filtered_data.nlargest(5, "rating")
+            st.subheader("🍴 Top 5 Restaurants Matching Your Filters")
 
-        # Display recommendations
-        if not recommendations.empty:
-            for _, row in recommendations.iterrows():
+            # Display restaurant details and clickable navigation link
+            for _, row in filtered_data.nlargest(5, "rating").iterrows():
                 st.markdown(
                     f"""
-                    <div style='border: 1px solid #ddd; border-radius: 10px; padding: 15px; margin: 10px 0; 
-                                box-shadow: 2px 2px 12px #aaa; background-color: #fdfdfd;'>
-                        <h3 style='color: #FF5733; font-family: Arial;'>🍴 {row['name']}</h3>
-                        <p><b>📍 Address:</b> {row['address']}</p>
-                        <p><b>🍽️ Cuisine:</b> {row['cuisine_type']}</p>
-                        <p><b>⭐ Rating:</b> {row['rating']}</p>
-                    </div>
-                    """,
+                    **Name:** {row['name']}  
+                    **Address:** {row['address']}  
+                    **Cuisine:** {row['cuisine_type']}  
+                    **Rating:** {row['rating']}
+                    """
+                )
+
+                # Generate and display the Google Static Map
+                google_maps_url = generate_google_maps_url(
+                    row["latitude"], row["longitude"]
+                )
+                st.image(
+                    google_maps_url,
+                    caption=f"Location: {row['name']}",
+                    use_column_width=True,
+                )
+
+                # Generate a clickable Google Maps Navigation link
+                navigation_url = generate_google_maps_navigation_url(
+                    row["latitude"], row["longitude"]
+                )
+                st.markdown(
+                    f"[🚗 Navigate to {row['name']}](<{navigation_url}>)",
                     unsafe_allow_html=True,
                 )
-        else:
-            st.warning("No matching restaurants found. Try changing your filters.")
 
-        # Display Heatmap
-        if show_heatmap:
-            st.subheader("🌍 Heatmap of Restaurant Ratings")
-            fig = create_heatmap(data)
-            st.plotly_chart(fig, use_container_width=True)
-
-    except FileNotFoundError:
-        st.error(
-            "Error: The cleaned dataset file is missing. Run data preparation first."
-        )
-    except KeyError as e:
-        st.error(f"Error: Missing column - {e}")
+    except Exception as e:
+        st.error(f"An error occurred: {e}")
 
 # Footer
 st.write("---")
-st.write("BiteFinder | A Personalized Guide to Dine | Powered by Streamlit and Plotly")
+st.write(
+    "BiteFinder | A Personalized Guide to Dine | Powered by Google Maps and Streamlit"
+)
