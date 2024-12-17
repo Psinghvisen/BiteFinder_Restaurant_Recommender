@@ -56,7 +56,7 @@ Real-time data integration using Google Places API.
 Interactive visualizations for better insights.
 User-friendly interface built with Streamlit.
 
-9. Production on Cloud Provider
+9.Production on Cloud Provider
     
 10.GitHub Link
 
