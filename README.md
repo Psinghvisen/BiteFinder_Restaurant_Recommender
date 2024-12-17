@@ -25,3 +25,7 @@ https://colab.research.google.com/drive/1Z6hrXHdiO4ugdiVcomMMHXt0SvGil10f?usp=sh
 -This colab demonstrate final data analysis with help of visualisation
 
 https://colab.research.google.com/drive/1NK7vVQl5cbr5HKgrajFzYo2EhAK98SHo?usp=sharing
+
+
+PPT link:
+https://docs.google.com/presentation/d/1oIeudeLbC1qhD3XzL9qCHSVFaX7OwuyV/edit?usp=sharing&ouid=107577854505128362451&rtpof=true&sd=true
