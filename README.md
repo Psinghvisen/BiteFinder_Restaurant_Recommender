@@ -8,7 +8,7 @@ BiteFinder is a restaurant recommendation system that integrates real-time data 
 ## Features
 - Location-based and cuisine-specific recommendations.
 - Real-time data integration using Yelp API.
-- Interactive visualizations using Plotly.
+- Interactive visualizations
 - User-friendly interface built with Streamlit.
 
 ## How to Run
