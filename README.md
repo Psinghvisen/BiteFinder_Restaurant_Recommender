@@ -1,4 +1,4 @@
-#BiteFinder_Restaurant_Recommender#
+#BiteFinder_Restaurant_Recommender
 
 BiteFinder Application
 
