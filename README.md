@@ -46,7 +46,7 @@ Demonstrates exploratory data analysis with visualizations.
 
 Colab Link:
 
-https://colab.research.google.com/drive/1Z6hrXHdiO4ugdiVcomMMHXt0SvGil10f?usp=sharing
+https://colab.research.google.com/drive/1MrKYnyRnROTAJvOnTPGQRxz9sFVWbThH?usp=sharing
 
 8.Streamlit Application
 
