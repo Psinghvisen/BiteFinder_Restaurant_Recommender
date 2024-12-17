@@ -1,56 +1,44 @@
-# BiteFinder_Restaurant_Recommender
-### BitFinder Application
-Authors:  Pooja Singh and Tonja Jean <br>
+BiteFinder_Restaurant_Recommender
+BiteFinder Application
+Authors: Pooja Singh and Tonja Jean
 
-<br> **Description**
-With countless dinign options avaialble, people often feel overhelmed when deciding where to go. This app provides the user the ability to search by location, cuisine, and ratings to help them narrow down their choices quickly.
-It integrates real-time data and advanced algorithms to provide personalized dining recommendations.<br>
+Description
+With countless dining options available, people often feel overwhelmed when deciding where to go. This app provides users the ability to search by location, cuisine, and ratings to help them quickly narrow down their choices.
+It integrates real-time data and advanced algorithms to provide personalized dining recommendations.
+
+BiteFinder Application Deliverables
+1. Video Demo
+Explanation of the purpose of the application.
+Deployment process.
+Use of standard methodology: CRISP-DM, Data Preparation, and EDA.
+2. PowerPoint Presentation
+Title: BiteFinder Presentation
+Presentation Link:
+PowerPoint Presentation
+3. CRISP-DM Artifacts
+Documented Colab Notebooks
+Data Preparation and Cleaning:
+
+Demonstrates the process of combining datasets, removing duplicates, and handling missing values.
+Resulting in a final cleaned file: cleaned_restaurant_data.csv, which is used in the application.
+Colab Link:
+Data Preparation Colab
+Final Data Analysis and Visualization:
+
+Demonstrates exploratory data analysis with visualizations.
+Colab Link:
+EDA and Visualization Colab
+4. Streamlit Application
+Features
+Location-based and cuisine-specific recommendations.
+Real-time data integration using Google Places API.
+Interactive visualizations for better insights.
+User-friendly interface built with Streamlit.
+5. Production on Cloud Provider
+6. GitHub Link
+(Add your GitHub repository link here)
 
 
-
-<br>
-
-**Bite Finder Application**
-<br>
-List of Deliverables: <br>
-<body>
-  
-* Video Demo
-    * Explain the purupose
-    * Deployment
-    * Use of standard Methodology CRISP-DM, Data Prep, EDA
-  
-  * PowerPoint Presentation:  BitFinder
-    
-    https://docs.google.com/presentation/d/1oIeudeLbC1qhD3XzL9qCHSVFaX7OwuyV/edit?usp=sharing&ouid=107577854505128362451&rtpof=true&sd=true
-
-  * CRISP-DM Artifacts
-    
-    * Documented Colab:
-      
-    * This colab demonstrate Data preparation and cleaning process. The process considered the combining, removal of duplicates and missing values. It also combined a mixture of json and csv files resulting in a final cleaned file 
-      named: cleaned_restaurant_data.csv which is used in the application.
-
-      https://colab.research.google.com/drive/1Z6hrXHdiO4ugdiVcomMMHXt0SvGil10f?usp=sharing
-
-    * This colab demonstrate final data analysis with help of visualisation
-
-     https://colab.research.google.com/drive/1NK7vVQl5cbr5HKgrajFzYo2EhAK98SHo?usp=sharing
-
-  * Streamlit Application
-    
-    ## Features
-    
-- Location-based and cuisine-specific recommendations.
-- Real-time data integration using Yelp API.
-- Interactive visualizations
-- User-friendly interface built with Streamlit.
-
-  * Production on Cloud Provider
-    
-  * GitHub link
-  
-</body>
 
 
 
