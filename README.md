@@ -11,13 +11,13 @@ It integrates real-time data and advanced algorithms to provide personalized din
 
 BiteFinder Application Deliverables
 
-1. Video Demo
+1.Video Demo
    
-2. Explanation of the purpose of the application.
+2.Explanation of the purpose of the application.
 
-3. Deployment process
+3.Deployment process
    
-4. Use of standard methodology: CRISP-DM, Data Preparation, and EDA.
+4.Use of standard methodology: CRISP-DM, Data Preparation, and EDA.
    
 5.PowerPoint Presentation
 
@@ -26,7 +26,7 @@ Presentation Link:
 https://docs.google.com/presentation/d/1oIeudeLbC1qhD3XzL9qCHSVFaX7OwuyV/edit?usp=sharing&ouid=107577854505128362451&rtpof=true&sd=true
 
 
-6. CRISP-DM Artifacts
+6.CRISP-DM Artifacts
    
 7.Documented Colab Notebooks
 
@@ -40,7 +40,7 @@ Colab Link:
 https://colab.research.google.com/drive/1ic1bGwSHFwSOa2vWGP1J7EQEDi1RHqSJ?usp=sharing
 
 
-B) Data Analysis and Visualization:
+B)Data Analysis and Visualization:
 
 Demonstrates exploratory data analysis with visualizations.
 
