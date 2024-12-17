@@ -60,6 +60,7 @@ User-friendly interface built with Streamlit.
     
 10.GitHub Link
 
+https://github.com/Psinghvisen/BiteFinder_Restaurant_Recommender.git
 
 
 
