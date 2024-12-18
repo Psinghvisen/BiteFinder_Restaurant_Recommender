@@ -1,4 +1,2 @@
-*.csv
-*.json
-.env
+*.env
 __pycache__/
