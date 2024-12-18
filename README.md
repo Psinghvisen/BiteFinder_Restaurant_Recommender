@@ -1,17 +1,80 @@
-# BiteFinder_Restaurant_Recommender
+BiteFinder_Restaurant_Recommender
 
-# BiteFinder - A Personalized Dining Guide
+BiteFinder Application
 
-## Description
-BiteFinder is a restaurant recommendation system that integrates real-time data and advanced algorithms to provide personalized dining recommendations.
+Authors: Pooja Singh and Tonja Jean
 
-## Features
-- Location-based and cuisine-specific recommendations.
-- Real-time data integration using Yelp API.
-- Interactive visualizations using Plotly.
-- User-friendly interface built with Streamlit.
+Description
 
-## How to Run
-1. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
+With countless dining options available, people often feel overwhelmed when deciding where to go. This app provides users the ability to search by location, cuisine, and ratings to help them quickly narrow down their choices.
+It integrates real-time data and advanced algorithms to provide personalized dining recommendations.
+
+BiteFinder Application Deliverables
+
+1.Video Demo
+
+https://youtu.be/r13XxUfIE7Y
+   
+2.Explanation of the purpose of the application.
+
+3.Deployment process
+   
+4.Use of standard methodology: CRISP-DM, Data Preparation, and EDA.
+   
+5.PowerPoint Presentation
+
+Video description:
+
+Presentation Link:
+
+https://docs.google.com/presentation/d/1oIeudeLbC1qhD3XzL9qCHSVFaX7OwuyV/edit?usp=sharing&ouid=107577854505128362451&rtpof=true&sd=true
+
+
+6.CRISP-DM Artifacts
+   
+7.Documented Colab Notebooks
+
+A)Data Preparation and Cleaning:
+
+Demonstrates the process of combining datasets, removing duplicates, and handling missing values.
+Resulting in a final cleaned file: cleaned_restaurant_data.csv, which is used in the application.
+
+Colab Link:
+
+https://colab.research.google.com/drive/1ic1bGwSHFwSOa2vWGP1J7EQEDi1RHqSJ?usp=sharing
+
+
+B)Data Analysis and Visualization:
+
+Demonstrates exploratory data analysis with visualizations.
+
+Colab Link:
+
+https://colab.research.google.com/drive/1MrKYnyRnROTAJvOnTPGQRxz9sFVWbThH?usp=sharing
+
+8.Streamlit Application
+
+Features
+Location-based and cuisine-specific recommendations.
+Real-time data integration using Google Places API.
+Interactive visualizations for better insights.
+User-friendly interface built with Streamlit.
+
+9.Production on Cloud Provider
+    
+10.GitHub Link
+
+https://github.com/Psinghvisen/BiteFinder_Restaurant_Recommender.git
+
+
+
+
+
+
+
+
+
+
+
+
+
