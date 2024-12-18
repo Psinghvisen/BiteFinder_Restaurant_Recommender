@@ -23,7 +23,13 @@ https://youtu.be/r13XxUfIE7Y
    
 5.PowerPoint Presentation
 
+Project introduction :
+
+https://youtu.be/zO1xnvrk9bU
+
 Video description:
+
+https://youtu.be/TpARBXIPC_U
 
 Presentation Link:
 
@@ -51,6 +57,10 @@ Demonstrates exploratory data analysis with visualizations.
 Colab Link:
 
 https://colab.research.google.com/drive/1MrKYnyRnROTAJvOnTPGQRxz9sFVWbThH?usp=sharing
+
+Colab video description link:
+
+https://youtu.be/M8_GwiPs6Rw
 
 8.Streamlit Application
 
