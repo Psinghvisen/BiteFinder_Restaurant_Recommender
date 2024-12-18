@@ -12,6 +12,8 @@ It integrates real-time data and advanced algorithms to provide personalized din
 BiteFinder Application Deliverables
 
 1.Video Demo
+
+https://youtu.be/r13XxUfIE7Y
    
 2.Explanation of the purpose of the application.
 
@@ -20,6 +22,8 @@ BiteFinder Application Deliverables
 4.Use of standard methodology: CRISP-DM, Data Preparation, and EDA.
    
 5.PowerPoint Presentation
+
+Video description:
 
 Presentation Link:
 
